@@ -1,5 +1,5 @@
-from window import window
 from random import random, randint
+from window import window
 import turtle
 import math
 
@@ -70,17 +70,17 @@ class Ball:
         (x, y) = self.get_coords()
         score = "none"
 
-        if x >= 380:
+        if x >= 390:
             self.ball.goto(0, 0)
             self.vector = generate_vector()
             score = "player_1"
         
-        if x <= -380:
+        if x <= -390:
             self.ball.goto(0, 0)
             self.vector = generate_vector()
             score = "player_2"
 
-        if y >= 280 or y <= -280:
+        if y >= 290 or y <= -290:
             self.invert("y")
 
         return score
