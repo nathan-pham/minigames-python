@@ -30,7 +30,6 @@ ball = game.Ball(0, 0)
 
 # Scores
 scores = {
-    "none": 0,
     "player_1": 0,
     "player_2": 0
 }
@@ -48,7 +47,10 @@ pen.goto(0, 260)
 while True:
     window.update()
     ball.collision([player_1, player_2])
-    scores[ball.boundary()] += 1
+
+    player_point = ball.boundary()
+    if player_point in scores:
+        scores[player_point] += 1
     
     score_1 = scores["player_1"]
     score_2 = scores["player_2"]

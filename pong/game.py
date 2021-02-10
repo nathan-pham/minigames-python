@@ -61,7 +61,7 @@ class Ball:
 
     def boundary(self):
         (x, y) = self.get_coords()
-        score = "none"
+        score = None
 
         if x >= 390:
             self.ball.goto(0, 0)
