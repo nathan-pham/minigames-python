@@ -3,13 +3,6 @@ from window import window
 import turtle
 import math
 
-def distance(x1, y1, x2, y2):
-    delta_y = y2 - y1
-    delta_x = x2 - x1
-    return math.sqrt(
-        (delta_y ** 2 ) + (delta_x ** 2)
-    )
-
 def generate_vector():
     d = [ -0.2, 0.2 ]
     return {
