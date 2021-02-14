@@ -1,11 +1,4 @@
-import os
-import sys
-import cmd
-import time
-import random
-import textwrap
-
-screen_width = 100
+import sys, random
 
 # initialize player
 class Player:
@@ -113,14 +106,16 @@ MAP_CONSTANTS = {
 # generate map
 def print_map():
     (player_x, player_y) = player.location
-    sight = 2
+    sight = 3
     for y in range(len(MAP)):
         row = MAP[y]
         map_row = []
+        random_sides = random.randint(1, sight)
+        random_tops = random.randint(1, sight)
         for x in range(len(row)):
             tile = row[x]
             tile_coordinates = f"{y}-{x}"
-            zone = (x < player_x + sight and x > player_x - sight) and (y < player_y + sight and y > player_y - sight)
+            zone = (x < player_x + random_sides and x > player_x - random_sides) and (y < player_y + random_tops and y > player_y - random_tops)
             explored = tile_coordinates in player.explored
             
             if explored or zone:
